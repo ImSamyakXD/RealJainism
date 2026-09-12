@@ -6,10 +6,11 @@ import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
+  { label: 'JainGPT', href: '/chat', isNew: true },
   { label: 'Panchang', href: '/panchang' },
   { label: 'Chaturmas', href: '/chaturmas' },
   { label: 'Wallpapers', href: '/wallpapers' },
+  { label: 'Ringtones', href: '/ringtones' },
 ];
 
 export default function Header() {
@@ -58,9 +59,14 @@ export default function Header() {
               <Link
                 key={link?.href}
                 href={link?.href}
-                className="text-xs font-black uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="relative text-xs font-black uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1.5"
               >
                 {link?.label}
+                {link?.isNew && (
+                  <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.5 rounded-full font-black tracking-normal uppercase">
+                    RAG
+                  </span>
+                )}
               </Link>
             ))}
             <Link
