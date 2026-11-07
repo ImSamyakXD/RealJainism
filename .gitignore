@@ -22,3 +22,9 @@ yarn-error.log*
 .DS_Store
 .vscode/
 .idea/
+*.tsbuildinfo
+
+# Local temporary dumps
+tirth.txt
+bucket-files.json
+Moodbidri.jpg

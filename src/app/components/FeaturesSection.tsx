@@ -47,12 +47,11 @@ const features = [
     icon: 'MapIcon',
     label: 'Temples',
     title: 'Jain Tirth & Temples',
-    description: 'A directory of Jain Tirth Kshetras and temples across India — coming soon.',
-    href: '/#temples',
-    cta: 'Coming Soon',
+    description: 'Explore verified Jain Tirth Kshetras — Siddh Kshetras, Atishay Kshetras, and ancient temple complexes with interactive maps and travel guides.',
+    href: '/tirths',
+    cta: 'Explore Tirths',
     span: 'lg:col-span-2',
     large: false,
-    comingSoon: true,
   },
   {
     icon: 'SparklesIcon',
@@ -191,8 +190,9 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Card: Jain Tirth & Temples — col-span-2 — coming soon */}
+          {/* Card: Jain Tirth & Temples — col-span-2 — live & working */}
           <div className="sm:col-span-2 bg-card p-6 sm:p-8 flex flex-col justify-between min-h-[180px] card-hover reveal reveal-delay-4 group relative overflow-hidden">
+            <div className="absolute inset-0 blob-primary opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <div className="flex items-center gap-3 mb-3">
@@ -202,21 +202,27 @@ export default function FeaturesSection() {
                   <p className="text-motto text-primary opacity-70">Temples</p>
                 </div>
                 <h3 className="text-xl font-black uppercase tracking-tight text-foreground leading-tight mb-2">
-                  Jain Tirth & Temples
+                  <Link href="/tirths" className="hover:text-primary transition-colors">
+                    Jain Tirth & Temples
+                  </Link>
                 </h3>
-                <p className="text-muted-foreground text-xs leading-relaxed font-medium max-w-xs">
-                  A directory of Jain Tirth Kshetras and temples across India — announcement coming soon.
+                <p className="text-muted-foreground text-xs leading-relaxed font-medium max-w-sm">
+                  Explore verified Digambar Jain Tirth Kshetras, Siddh Kshetras, Atishay Kshetras, and heritage basadis across India with live interactive maps and darshan guides.
                 </p>
               </div>
-              <div className="kalyanak-badge px-5 py-3 rounded-xl text-center flex-shrink-0">
-                <p className="text-xs font-black uppercase tracking-widest text-primary">Coming</p>
-                <p className="text-xs font-black uppercase tracking-widest text-primary">Soon</p>
-              </div>
+              <Link
+                href="/tirths"
+                className="relative z-10 flex-shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-accent transition-all duration-200 shadow-md"
+              >
+                Explore Tirths
+                <Icon name="ArrowRightIcon" size={14} />
+              </Link>
             </div>
           </div>
 
           {/* Card: Stavan, Bhajan & Stotra — col-span-2 — coming soon */}
           <div className="sm:col-span-2 bg-card p-6 sm:p-8 flex flex-col justify-between min-h-[180px] card-hover reveal reveal-delay-4 group relative overflow-hidden">
+            <div className="absolute inset-0 blob-accent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <div className="flex items-center gap-3 mb-3">

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const RAG_BACKEND_URL = process.env.RAG_BACKEND_URL || 'http://127.0.0.1:8000';
+const RAG_BACKEND_URL = (process.env.RAG_BACKEND_URL || 'http://127.0.0.1:8000').replace(/\/+$/, '');
 
 const FAST_TOPICS: Record<string, string> = {
   "पंच महाव्रत": `**पंच महाव्रत (Five Great Vows of Jainism):**
@@ -93,17 +93,24 @@ export async function POST(req: Request) {
       if (response.ok) {
         const data = await response.json();
         return NextResponse.json({
-          answer: data.answer || 'No response received from Jain AI.',
+          answer: data.answer || data.response || 'No response received from Jain AI.',
           source: 'rag_backend',
         });
+      } else {
+        console.warn(`RAG backend (${RAG_BACKEND_URL}/chat) returned status: ${response.status}`);
       }
-    } catch (backendError) {
-      console.warn('RAG FastAPI service unreachable, checking direct fallback...', backendError);
+    } catch (backendError: any) {
+      console.warn(`RAG backend unreachable at ${RAG_BACKEND_URL}/chat:`, backendError?.message || backendError);
     }
 
-    // Default polite response if backend is offline
+    // Informative polite response if backend is offline or starting up
+    const isLocalhost = RAG_BACKEND_URL.includes('127.0.0.1') || RAG_BACKEND_URL.includes('localhost');
+    const offlineMessage = isLocalhost
+      ? 'Jai Jinendra! 🙏 The scriptural RAG backend server is currently offline or connecting. If running locally, please start the Python service (`uvicorn app:app --port 8000`). If hosted on Render, please set `RAG_BACKEND_URL` in your environment variables.'
+      : 'Jai Jinendra! 🙏 The scriptural RAG service on Render is currently waking up or restarting. On free hosting, spin-up can take 45–90 seconds. Please wait a moment and try your question again!';
+
     return NextResponse.json({
-      answer: 'Jai Jinendra! The scriptural RAG database server is currently connecting. Please ensure the Python backend (`python -m uvicorn app:app --port 8000`) is running to access full Agam knowledge base searches.',
+      answer: offlineMessage,
       source: 'offline_notice',
     });
 

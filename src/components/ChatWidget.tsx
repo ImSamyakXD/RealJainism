@@ -261,42 +261,47 @@ export default function ChatWidget() {
           </div>
 
           {/* Quick Prompts */}
-          <div className="px-3 py-1.5 bg-background border-t border-border/60 flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0">
+          <div className="px-3 py-2 bg-[#120d08] border-t border-[#2e1f0e]/80 flex items-center gap-2 overflow-x-auto no-scrollbar flex-shrink-0">
             {QUICK_PROMPTS.map((prompt) => (
               <button
                 key={prompt}
                 onClick={() => handleSend(prompt)}
                 disabled={loading}
-                className="whitespace-nowrap px-2.5 py-1 rounded-full text-[10px] font-semibold bg-muted/60 hover:bg-primary/20 text-muted-foreground hover:text-foreground transition-all duration-150 border border-border/50"
+                className="whitespace-nowrap px-3 py-1.5 rounded-full text-[11px] font-semibold bg-[#1c140c] hover:bg-amber-600/20 text-stone-300 hover:text-amber-300 transition-all duration-150 border border-amber-900/40 hover:border-amber-600/50 shadow-sm"
               >
                 {prompt}
               </button>
             ))}
           </div>
 
-          {/* Input Box */}
+          {/* Input Box - Solid Dark Background with Crisp White High-Contrast Text */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSend();
             }}
-            className="p-2.5 bg-background border-t border-border flex items-center gap-2 flex-shrink-0"
+            className="p-3 bg-[#110c07] border-t border-[#2e1f0e] flex items-center gap-2.5 flex-shrink-0"
           >
             <input
               ref={inputRef}
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask JainGPT..."
+              placeholder="Ask JainGPT in Hindi or English..."
               disabled={loading}
-              className="flex-1 bg-muted/40 text-foreground text-xs sm:text-sm px-3 py-2 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder:text-muted-foreground/70"
+              className="flex-1 text-white text-xs sm:text-sm px-4 py-2.5 rounded-full border border-amber-600/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 placeholder:text-stone-400 font-medium transition-all shadow-inner"
+              style={{
+                backgroundColor: '#1c140c',
+                color: '#ffffff',
+              }}
             />
             <button
               type="submit"
               disabled={!input.trim() || loading}
-              className="w-9 h-9 rounded-xl bg-primary text-primary-foreground flex items-center justify-center disabled:opacity-40 hover:bg-primary/90 transition-all shadow-md flex-shrink-0"
+              className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-500 text-slate-950 font-black flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all shadow-md flex-shrink-0"
+              aria-label="Send question"
             >
-              <Icon name="PaperAirplaneIcon" size={16} />
+              <Icon name="PaperAirplaneIcon" size={17} />
             </button>
           </form>
         </div>

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
-import { supabase } from '@/lib/supabase';
+import { mediaSupabase } from '@/lib/supabase';
 
 interface Ringtone {
   id: string;
@@ -57,8 +57,8 @@ const fallbackRingtones: Ringtone[] = [
   },
   {
     id: '6',
-    name: 'Mangalam Bhagwan Mahaviro Aarti',
-    artist: 'Aarti Collection',
+    name: 'Namokar Mahamantra Dhun',
+    artist: 'Sacred Chants',
     duration: '1:45',
     audioUrl: 'https://cdn.pixabay.com/download/audio/2022/10/14/audio_99397943fa.mp3?filename=indian-meditation-124976.mp3',
     downloads: 2540,
@@ -76,25 +76,44 @@ export default function RingtonesClient() {
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Fetch ringtones from Supabase asynchronously
+  // Fetch ringtones dynamically from admin API & Supabase
   useEffect(() => {
-    async function fetchRingtonesFromSupabase() {
+    async function fetchRingtones() {
       try {
-        const { data, error } = await supabase
+        const res = await fetch('/api/admin/ringtones');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            const mapped: Ringtone[] = data.map((item: any) => ({
+              id: item.id,
+              name: (item.name || 'Jain Ringtone').replace(/^\n/, ''),
+              artist: item.artist || 'Jain Stavan',
+              duration: item.duration || '1:00',
+              audioUrl: (item.audioUrl || item.audio_url || '').trim(),
+              downloads: item.downloads || 0,
+            }));
+            setRingtonesList(mapped);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Admin API fetch notice:', err);
+      }
+
+      try {
+        const { data, error } = await mediaSupabase
           .from('ringtones')
           .select('*')
           .order('created_at', { ascending: false });
 
-        if (error) {
-          console.warn('Supabase fetch notice (using fallback):', error.message);
-          setRingtonesList(fallbackRingtones);
-        } else if (data && data.length > 0) {
+        if (!error && data && data.length > 0) {
           const mapped: Ringtone[] = data.map((item: any) => ({
             id: item.id,
-            name: item.name,
+            name: (item.name || 'Jain Ringtone').replace(/^\n/, ''),
             artist: item.artist || 'Jain Stavan',
             duration: item.duration || '1:00',
-            audioUrl: item.audio_url || item.audioUrl,
+            audioUrl: (item.audio_url || item.audioUrl || '').trim(),
             downloads: item.downloads || 0,
           }));
           setRingtonesList(mapped);
@@ -102,14 +121,13 @@ export default function RingtonesClient() {
           setRingtonesList(fallbackRingtones);
         }
       } catch (e) {
-        console.warn('Supabase connection error:', e);
         setRingtonesList(fallbackRingtones);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchRingtonesFromSupabase();
+    fetchRingtones();
   }, []);
 
   useEffect(() => {

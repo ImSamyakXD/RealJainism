@@ -1,0 +1,716 @@
+{
+  "rj-merta-jain": {
+    "id": "02009110-7a67-4f6a-b96b-dc7c7c4e8a4c",
+    "slug": "rj-merta-jain",
+    "name": "Merta Jain Temple",
+    "hindi_name": "मेड़ता जैन मंदिर",
+    "alternate_names": [
+      "मेड़ता जैन मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Rajasthan",
+    "district": "Nagaur",
+    "city": "Nagaur",
+    "pin_code": "341001",
+    "address": "Merta Jain Temple, Nagaur, District Nagaur, Rajasthan - 341001",
+    "latitude": 26.65,
+    "longitude": 74.03,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=26.65,74.03",
+    "openstreetmap_url": null,
+    "description": "Merta Jain Temple is an auspicious Digambar Jain pilgrimage destination situated in Nagaur, Rajasthan. Historic Digambar Jain sacred sanctuary in Nagaur, Rajasthan, consecrated to Lord Rishabhanatha (Adinath). Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Nagaur, Rajasthan. Revered as an ancient Atishaya Kshetra dedicated to Lord Rishabhanatha (Adinath), the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Rishabhanatha (Adinath).",
+    "moolnayak_details": "Bhagwan Rishabhanatha (Adinath), in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Rishabhanatha (Adinath).).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Nagaur",
+      "airport": "Jodhpur Civil Airport (JDH)",
+      "railway": "Nagaur Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "/uploads/tirths/1000156494_1792843708967.png",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-10-24T12:08:31.250Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "up-banda-jain": {
+    "id": "912324fd-73c4-4bc6-8040-a1e44b87627c",
+    "slug": "up-banda-jain",
+    "name": "Banda Munisuvratnath Mandir",
+    "hindi_name": "बांदा मुनिसुव्रतनाथ मंदिर",
+    "alternate_names": [
+      "बांदा मुनिसुव्रतनाथ मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Uttar Pradesh",
+    "district": "Banda",
+    "city": "Banda",
+    "pin_code": "210001",
+    "address": "Banda Munisuvratnath Mandir, Banda, District Banda, Uttar Pradesh - 210001",
+    "latitude": 25.48,
+    "longitude": 80.34,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.48,80.34",
+    "openstreetmap_url": null,
+    "description": "Banda Munisuvratnath Mandir is an auspicious Digambar Jain pilgrimage destination situated in Banda, Uttar Pradesh. Historic Digambar Jain sacred sanctuary in Banda, Uttar Pradesh, consecrated to Lord Munisuvrata. Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Banda, Uttar Pradesh. Revered as an ancient Atishaya Kshetra dedicated to Lord Munisuvrata, the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Munisuvrata.",
+    "moolnayak_details": "Bhagwan Munisuvrata, in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Munisuvrata.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Banda",
+      "airport": "Chaudhary Charan Singh International Airport, Lucknow (LKO)",
+      "railway": "Banda Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://rllagzfmqpkzjhxnzxpf.supabase.co/storage/v1/object/public/tirth-photos/Banda%20Munisuvratnath%20Mandir.png",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-10-24T12:26:35.649Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "shri-1008-chintamani-parshwanath-digambar-jain-atishay-kshetra-kaithuli-mandsaur-madhya-pradesh": {
+    "id": "tirth-1792846388644",
+    "slug": "shri-1008-chintamani-parshwanath-digambar-jain-atishay-kshetra-kaithuli-mandsaur-madhya-pradesh",
+    "name": "Shri 1008 Chintamani Parshwanath Digambar Jain Atishay Kshetra, Kaithuli Mandsaur, Madhya Pradesh",
+    "hindi_name": "श्री 1008 चिंतामणि पार्श्वनाथ दिगंबर जैन अतिशय क्षेत्र, कैथुली मंदसौर, मध्य प्रदेश",
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Madhya Pradesh",
+    "district": "Mandsaur",
+    "city": "Mandsaur",
+    "address": "",
+    "pin_code": "",
+    "latitude": 23,
+    "longitude": 77,
+    "google_maps_url": "",
+    "description": "An ancient Jain pilgrimage site, believed to be around 1,100 years old, known for the miraculous idol of Bhagwan Parshwanath, the 23rd Tirthankara",
+    "history": "",
+    "moolnayak_details": "Bhagwan Parasanath",
+    "darshan_timings": {
+      "morning": "6:00 AM - 11:30 AM",
+      "evening": "5:30 PM - 8:30 PM"
+    },
+    "facilities": [
+      "Dharamshala",
+      "Bhojanshala",
+      "Drinking Water",
+      "Parking"
+    ],
+    "contact_phone": "NA",
+    "official_website": "",
+    "cover_image_url": "",
+    "verification_status": "published",
+    "created_at": "2026-10-24T12:53:08.645Z",
+    "updated_at": "2026-10-24T12:53:08.645Z"
+  },
+  "up-azamgarh-jain": {
+    "id": "4a9c4dd1-10f4-464f-896a-e25ae6a51fe0",
+    "slug": "up-azamgarh-jain",
+    "name": "Parshvanath Mandir Badagaon",
+    "hindi_name": "आजमगढ़ पार्श्वनाथ मंदिर",
+    "alternate_names": [
+      "आजमगढ़ पार्श्वनाथ मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Uttar Pradesh",
+    "district": "Azamgarh",
+    "city": "BADAGAON, KHEKRA, BAGHPAT.",
+    "pin_code": "250001",
+    "address": "Azamgarh Parshvanath Mandir, Azamgarh, District Azamgarh, Uttar Pradesh - 250001",
+    "latitude": 26.0681,
+    "longitude": 83.1864,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=26.0681,83.1864",
+    "openstreetmap_url": null,
+    "description": " Parshvanath Mandir is an auspicious Digambar Jain pilgrimage destination situated near Azamgarh, Uttar Pradesh. Historic Digambar Jain sacred sanctuary in Azamgarh, Uttar Pradesh, consecrated to Lord Parshvanatha. Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Azamgarh, Uttar Pradesh. Revered as an ancient Atishaya Kshetra dedicated to Lord Parshvanatha, the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Parshvanatha.",
+    "moolnayak_details": "Bhagwan Parshvanatha, in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Parshvanatha.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Azamgarh",
+      "airport": "Chaudhary Charan Singh International Airport, Lucknow (LKO)",
+      "railway": "Azamgarh Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/screenshot_2026-11-01_215705_1793550439971.png",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:27:24.991Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "up-bulandshahr-jain": {
+    "id": "82e78fcf-fdd6-49f8-94cb-b0bb86b78fc5",
+    "slug": "up-bulandshahr-jain",
+    "name": "Bulandshahr Neminath Mandir",
+    "hindi_name": "बुलंदशहर नेमिनाथ मंदिर",
+    "alternate_names": [
+      "बुलंदशहर नेमिनाथ मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Uttar Pradesh",
+    "district": "Bulandshahr",
+    "city": "Bulandshahr",
+    "pin_code": "203001",
+    "address": "Bulandshahr Neminath Mandir, Bulandshahr, District Bulandshahr, Uttar Pradesh - 203001",
+    "latitude": 28.407,
+    "longitude": 77.8498,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=28.407,77.8498",
+    "openstreetmap_url": null,
+    "description": "Bulandshahr Neminath Mandir is an auspicious Digambar Jain pilgrimage destination situated in Bulandshahr, Uttar Pradesh. Historic Digambar Jain sacred sanctuary in Bulandshahr, Uttar Pradesh, consecrated to Lord Neminatha (Upper Kot). Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Bulandshahr, Uttar Pradesh. Revered as an ancient Atishaya Kshetra dedicated to Lord Neminatha (Upper Kot), the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Neminatha (Upper Kot).",
+    "moolnayak_details": "Bhagwan Neminatha (Upper Kot), in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Neminatha (Upper Kot).).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Bulandshahr",
+      "airport": "Indira Gandhi International Airport, New Delhi (DEL) - Approx 55-90 km",
+      "railway": "Bulandshahr Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/screenshot_2026-11-01_215933_1793550590017.png",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:29:53.276Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "gj-junagadh-jain": {
+    "id": "62f0e92a-9868-4d5b-ab88-e94bee3801be",
+    "slug": "gj-junagadh-jain",
+    "name": "Junagadh Jain Temple",
+    "hindi_name": "जूनागढ़ जैन मंदिर",
+    "alternate_names": [
+      "जूनागढ़ जैन मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "city": "Junagadh",
+    "pin_code": "362001",
+    "address": "Junagadh Jain Temple, Junagadh, District Junagadh, Gujarat - 362001",
+    "latitude": 21.52,
+    "longitude": 70.46,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=21.52,70.46",
+    "openstreetmap_url": null,
+    "description": "Junagadh Jain Temple is an auspicious Digambar Jain pilgrimage destination situated in Junagadh, Gujarat. Historic Digambar Jain sacred sanctuary in Junagadh, Gujarat, consecrated to Lord Neminatha. Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Junagadh, Gujarat. Revered as an ancient Atishaya Kshetra dedicated to Lord Neminatha, the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Neminatha.",
+    "moolnayak_details": "Bhagwan Neminatha, in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Neminatha.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Junagadh",
+      "airport": "Rajkot International Airport (Hirasar) (HSR) / Keshod Airport",
+      "railway": "Junagadh Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/dsc02669_1793551368312.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:42:50.887Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "hr-karnal-jain": {
+    "id": "b21136e5-db4e-44a1-a3fa-204fe29cb389",
+    "slug": "hr-karnal-jain",
+    "name": "Karnal Jain Temple",
+    "hindi_name": "करनाल जैन मंदिर",
+    "alternate_names": [
+      "करनाल जैन मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Haryana",
+    "district": "Karnal",
+    "city": "Karnal",
+    "pin_code": "470001",
+    "address": "Karnal Jain Temple, Karnal, District Karnal, Haryana - 470001",
+    "latitude": 29.68,
+    "longitude": 76.99,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=29.68,76.99",
+    "openstreetmap_url": null,
+    "description": "Karnal Jain Temple is an auspicious Digambar Jain pilgrimage destination situated in Karnal, Haryana. Historic Digambar Jain sacred sanctuary in Karnal, Haryana, consecrated to Lord Rishabhanatha (Adinath). Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Karnal, Haryana. Revered as an ancient Atishaya Kshetra dedicated to Lord Rishabhanatha (Adinath), the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Rishabhanatha (Adinath).",
+    "moolnayak_details": "Bhagwan Rishabhanatha (Adinath), in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Rishabhanatha (Adinath).).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Karnal",
+      "airport": "Nearest state capital civil airport with domestic flight connectivity",
+      "railway": "Karnal Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/1710822444-karnal-jain-mandir-17_1793551657809.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:47:40.360Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "up-mirzapur-jain": {
+    "id": "b0e5f752-9b88-4772-a4f5-a01e57824589",
+    "slug": "up-mirzapur-jain",
+    "name": "Mirzapur Parshvanath Mandir",
+    "hindi_name": "मिर्जापुर पार्श्वनाथ मंदिर",
+    "alternate_names": [
+      "मिर्जापुर पार्श्वनाथ मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Uttar Pradesh",
+    "district": "Mirzapur",
+    "city": "Mirzapur",
+    "pin_code": "231001",
+    "address": "Mirzapur Parshvanath Mandir, Mirzapur, District Mirzapur, Uttar Pradesh - 231001",
+    "latitude": 25.1458,
+    "longitude": 82.5656,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=25.1458,82.5656",
+    "openstreetmap_url": null,
+    "description": "Mirzapur Parshvanath Mandir is an auspicious Digambar Jain pilgrimage destination situated in Mirzapur, Uttar Pradesh. Historic Digambar Jain sacred sanctuary in Mirzapur, Uttar Pradesh, consecrated to Lord Parshvanatha. Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Mirzapur, Uttar Pradesh. Revered as an ancient Atishaya Kshetra dedicated to Lord Parshvanatha, the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Parshvanatha.",
+    "moolnayak_details": "Bhagwan Parshvanatha, in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Parshvanatha.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Mirzapur",
+      "airport": "Lal Bahadur Shastri International Airport, Varanasi (VNS)",
+      "railway": "Mirzapur Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/471978772_1577997029509828_6020185844848_1793551836776.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:50:39.499Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "up-lalitpur-jain": {
+    "id": "92f33b71-c6f6-4c2c-8f7c-e8a447e28f48",
+    "slug": "up-lalitpur-jain",
+    "name": "Abhinandanodaya Atishaya Kshetra",
+    "hindi_name": "ललितपुर अतिशय क्षेत्र",
+    "alternate_names": [
+      "ललितपुर क्षेत्रपाल अतिशय क्षेत्र"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Uttar Pradesh",
+    "district": "Lalitpur",
+    "city": "Lalitpur",
+    "pin_code": "284403",
+    "address": "Lalitpur Kshetrapal Atishaya Kshetra, Lalitpur, District Lalitpur, Uttar Pradesh - 284403",
+    "latitude": 24.6883,
+    "longitude": 78.412,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=24.6883,78.412",
+    "openstreetmap_url": null,
+    "description": "Lalitpur Kshetrapal Atishaya Kshetra is an auspicious Digambar Jain pilgrimage destination situated in Lalitpur, Uttar Pradesh. Historic Digambar Jain sacred sanctuary in Lalitpur, Uttar Pradesh, consecrated to Lord Shantinatha (Kshetrapal). Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Lalitpur, Uttar Pradesh. Revered as an ancient Atishaya Kshetra dedicated to Lord Shantinatha (Kshetrapal), the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Shantinatha (Kshetrapal).",
+    "moolnayak_details": "Bhagwan Shantinatha (Kshetrapal), in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the Ancient, (Dedicated to the sacred iconographic lineage of Lord Shantinatha (Kshetrapal).).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Lalitpur",
+      "airport": "Gwalior Airport (GWL) - 140 km / Raja Bhoj Airport, Bhopal (BHO) - 220 km",
+      "railway": "Lalitpur Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://rllagzfmqpkzjhxnzxpf.supabase.co/storage/v1/object/public/tirth-photos/Lalitpur%20Kshetrapal%20Atishaya%20Kshetra.png",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:53:57.006Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "ka-mudabidri": {
+    "id": "718af2c6-0b0c-4d54-8ed6-883c2cbb5063",
+    "slug": "ka-mudabidri",
+    "name": "Mudabidri 1000 Pillar Temple",
+    "hindi_name": "मूडबिद्री सहस्र स्तम्भ मंदिर",
+    "alternate_names": [
+      "मूडबिद्री सहस्र स्तम्भ मंदिर"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Karnataka",
+    "district": "Mudabidri",
+    "city": "Mudabidri",
+    "pin_code": "570001",
+    "address": "Mudabidri 1000 Pillar Temple, Mudabidri, District Mudabidri, Karnataka - 570001",
+    "latitude": 13.07,
+    "longitude": 75.04,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=13.07,75.04",
+    "openstreetmap_url": null,
+    "description": "Mudabidri 1000 Pillar Temple is an auspicious Digambar Jain pilgrimage destination situated in Mudabidri, Karnataka. Historic Digambar Jain sacred sanctuary in Mudabidri, Karnataka, consecrated to Lord Chandraprabhu. Documented pilgrimage center of profound spiritual serenity and devotional heritage.",
+    "history": "Sacred Digambar Jain pilgrimage center located in Mudabidri, Karnataka. Revered as an ancient Atishaya Kshetra dedicated to Lord Chandraprabhu, the sanctuary preserves venerable Vitaraga Jinabimba sculptures, traditional stone architecture, and serene devotional heritage frequented by pilgrims across India.",
+    "religious_significance": "Sacred Digambar pilgrimage site associated with Lord Chandraprabhu.",
+    "moolnayak_details": "Bhagwan Chandraprabhu, in contemplative Padmasana (Seated) posture, sculpted from Carved Stone, dating to the 15वीं शताब्दी, (Dedicated to the sacred iconographic lineage of Lord Chandraprabhu.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - शाम 7:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "सुबह 6:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Mudabidri",
+      "airport": "Kempegowda International Airport, Bengaluru (BLR)",
+      "railway": "Mudabidri Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/images_1793552180168.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-01T16:56:23.055Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "rj-pali-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:01:08.690Z"
+  },
+  "palitana-shatrunjaya": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:01:16.892Z"
+  },
+  "gj-porbandar-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:04:48.031Z"
+  },
+  "ka-raichur-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:10:17.716Z"
+  },
+  "br-rajgir-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:11:39.923Z"
+  },
+  "mp-ramnagar-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:14:12.138Z"
+  },
+  "gj-palanpur-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:26:54.331Z"
+  },
+  "dl-lal-mandir": {
+    "id": "83c24558-9ba0-4d26-adf1-65c510ffd218",
+    "slug": "dl-lal-mandir",
+    "name": "Shri Digambar Jain Lal Mandir (Red Temple, Chandni Chowk)",
+    "hindi_name": "श्री दिगंबर जैन लाल मंदिर (चाँदनी चौक, लाल किला)",
+    "alternate_names": [
+      "Lal Mandir",
+      "Urdu Mandir",
+      "Camp Temple",
+      "Red Temple Delhi",
+      "Chandni Chowk Digambar Jain Mandir"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Delhi",
+    "district": "Central Delhi",
+    "city": "Old Delhi (Shahjahanabad)",
+    "pin_code": "470001",
+    "address": "Shri Digambar Jain Lal Mandir (Red Temple, Chandni Chowk), Old Delhi (Shahjahanabad), District Central Delhi, Delhi - 470001",
+    "latitude": 28.6558,
+    "longitude": 77.2309,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=28.6558,77.2309",
+    "openstreetmap_url": null,
+    "description": "Shri Digambar Jain Lal Mandir (Red Temple, Chandni Chowk) is an auspicious Digambar Jain pilgrimage destination situated in Old Delhi (Shahjahanabad), Delhi. The oldest and best-known Digambar Jain temple in Delhi, situated directly opposite the Red Fort at the entrance to Netaji Subhash Marg and Chandni Chowk. Established in 1656 CE during the reign of Mughal Emperor Shah Jahan, it originated as the 'Urdu Mandir' (Camp Temple) for Jain military officers and imperial merchants. Built in striking red sandstone, the complex houses ancient Jinabimbas dating from the 10th–15th centuries and the renowned Charity Birds Hospital (Jain Chidiya Aspatal) established in 1956.",
+    "history": "When Emperor Shah Jahan shifted the Mughal capital from Agra to Shahjahanabad (Delhi) in 1648, a contingent of Jain cavalry officers and royal treasurers was granted land to establish their camp opposite the imperial citadel. In 1656, an imperial officer installed a sacred image of Lord Parshvanatha in a tent sanctuary, which gradually expanded into a permanent red sandstone structure known as the Urdu Mandir. During the later Mughal period, sacred metal and stone Tirthankara idols from ancient temples in Mewar and Gwalior were brought here for preservation. In 1800–1807, Raja Harsukh Rai and community leaders renovated the sanctum, and in the early 20th century, the imposing red sandstone shikhara was added. Carr Stephen (1876) notes the prominent commercial and spiritual status of the Digambar merchant community surrounding Chandni Chowk.",
+    "religious_significance": "Premier spiritual and institutional landmark of the Digambar Jain community in northern India, receiving hundreds of thousands of pilgrims annually.",
+    "moolnayak_details": "Bhagwan Rishabhanatha (Adinath), in contemplative Padmasana (Seated) posture, measuring approximately 3 feet, sculpted from Black Kasauti Stone, dating to the Medieval (c. 11th–12th Century CE), (Ancient seated Vitaraga idol with bull lanchhana, accompanied by historical brass idols of Parshvanatha and Chandraprabhu.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - 11:30, 18:00 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "05:30 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Old Delhi (Shahjahanabad)",
+      "airport": "Nearest state capital civil airport with domestic flight connectivity",
+      "railway": "Old Delhi (Shahjahanabad) Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/images_1793896254646.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-05T16:30:57.014Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "dl-naya-mandir": {
+    "id": "7bf5d68e-404e-4432-9630-542c745ed704",
+    "slug": "dl-naya-mandir",
+    "name": "Shri Digambar Jain Naya Mandir (Dharampura, Chandni Chowk)",
+    "hindi_name": "श्री दिगंबर जैन नया मंदिर (धर्मपुरा, चाँदनी चौक)",
+    "alternate_names": [
+      "Raja Harsukh Rai Temple",
+      "Dharampura Jain Mandir",
+      "Naya Mandir Shahjahanabad"
+    ],
+    "tirth_type": "atishay_kshetra",
+    "tradition": "Digambara",
+    "state": "Delhi",
+    "district": "Central Delhi",
+    "city": "Old Delhi (Dharampura)",
+    "pin_code": "454001",
+    "address": "Shri Digambar Jain Naya Mandir (Dharampura, Chandni Chowk), Old Delhi (Dharampura), District Central Delhi, Delhi - 454001",
+    "latitude": 28.651,
+    "longitude": 77.227,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=28.651,77.227",
+    "openstreetmap_url": null,
+    "description": "Shri Digambar Jain Naya Mandir (Dharampura, Chandni Chowk) is an auspicious Digambar Jain pilgrimage destination situated in Old Delhi (Dharampura), Delhi. A monumental Digambar Jain temple in Dharampura, Old Delhi, constructed in 1807 CE (VS 1864) by Raja Harsukh Rai, royal treasurer to Mughal Emperor Akbar II. Revered as the first Jain temple in the Mughal imperial capital to be granted an official imperial firman permitting the erection of stone shikharas (spires), which had been prohibited in Delhi for centuries. The temple houses an extraordinary subterranean Jnana Bhandar preserving priceless medieval Digambar manuscripts.",
+    "history": "Raja Harsukh Rai, an influential Agarwala Digambar Jain merchant and imperial treasurer, secured a special royal decree (firman) from Mughal Emperor Akbar II allowing the construction of soaring stone shikharas in the walled city of Shahjahanabad. The grand consecration ceremony (Panchakalyanaka Pratishtha) in 1807 was celebrated with unprecedented splendor, attended by Digambar sanghas from across northern and western India. Raja Harsukh Rai also established a subterranean Jnana Bhandar (scriptural repository) to safeguard rare palm-leaf and handmade paper manuscripts, including illuminated texts of the Samayasara and Uttarapurana with gold calligraphy.",
+    "religious_significance": "Renowned for its architectural magnificence, imperial historical significance, and one of northern India's richest private collections of Digambar Jain manuscripts (Jnana Bhandar).",
+    "moolnayak_details": "Bhagwan Parshvanatha, in contemplative Padmasana (Seated) posture, measuring approximately 3.5 feet, sculpted from White Makrana Marble, dating to the 1807 CE (Constituted with ancient Pratimas), (Exquisitely polished marble image with seven-hooded serpent canopy (Dharanendra nagafana) and attendant Yaksha-Yakshi carvings.).",
+    "festivals": [],
+    "inscriptions_archaeology": null,
+    "darshan_timings": {
+      "notes": "Temple opens early for morning pakhsal; visitors are requested to wear traditional clean clothes.",
+      "evening": "05:00 PM - 11:30, 17:30 (Sandhya Darshan & Deep Aradhana)",
+      "morning": "06:00 - 12:30 PM (Morning Abhishek, Pakhsal & Jin Puja)"
+    },
+    "facilities": [
+      "Digambar Dharamshala",
+      "Shuddh Jain Bhojanshala",
+      "Drinking Water",
+      "Pilgrim Rest Hall",
+      "Vehicle Parking"
+    ],
+    "accessibility_notes": "Paved courtyard offering convenient ground-level pedestrian access throughout the temple complex.",
+    "nearby_transport": {
+      "road": "Connected via State & National Highway network; local bus and taxi services available from Old Delhi (Dharampura)",
+      "airport": "Nearest state capital civil airport with domestic flight connectivity",
+      "railway": "Old Delhi (Dharampura) Railway Station (connected to major junction via North Central / Western / South Western Railways)"
+    },
+    "contact_phone": "Inquire at Local Digambar Jain Prabandhakarini Committee Office",
+    "contact_email": null,
+    "official_website": null,
+    "cover_image_url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/tirth-photos/images_1793896323758.jpg",
+    "sources_summary": null,
+    "verification_status": "published",
+    "verified_at": "2026-10-19T16:02:37.794573+00:00",
+    "verified_by": "RealJainism Research Team",
+    "created_at": "2026-10-19T16:02:37.794573+00:00",
+    "updated_at": "2026-11-05T16:32:05.376Z",
+    "published_at": "2026-10-19T16:02:37.794573+00:00"
+  },
+  "mp-chhatarpur-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:43:29.513Z"
+  },
+  "rj-bijolia": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:44:00.809Z"
+  },
+  "gj-gandhinagar-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:44:21.658Z"
+  },
+  "dilwara": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:44:39.239Z"
+  },
+  "mp-jhabua-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:45:05.455Z"
+  },
+  "rj-jaipur-dadabari": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:45:28.241Z"
+  },
+  "mp-neemuch-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:45:43.093Z"
+  },
+  "rj-khandela": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:45:54.830Z"
+  },
+  "ap-kurnool-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:46:03.859Z"
+  },
+  "gj-mehsana-jain": {
+    "_deleted": true,
+    "updated_at": "2026-11-05T16:46:21.303Z"
+  }
+}

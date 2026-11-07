@@ -6,8 +6,9 @@ import AppLogo from '@/components/ui/AppLogo';
 import Icon from '@/components/ui/AppIcon';
 
 const navLinks = [
-  { label: 'JainGPT', href: '/chat', isNew: true },
+  { label: 'JainGPT', href: '/chat' },
   { label: 'Panchang', href: '/panchang' },
+  { label: 'Tirths', href: '/tirths' },
   { label: 'Chaturmas', href: '/chaturmas' },
   { label: 'Wallpapers', href: '/wallpapers' },
   { label: 'Ringtones', href: '/ringtones' },
@@ -40,9 +41,9 @@ export default function Header() {
             ? 'bg-background/90 backdrop-blur-xl border-b border-border' :'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="RealJainism Home">
+          <Link href="/" className="flex items-center gap-3 group flex-shrink-0" aria-label="RealJainism Home">
             <AppLogo
               src="/assets/images/logo-1784737155365.png"
               size={36}
@@ -54,32 +55,27 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 flex-shrink-0" aria-label="Main navigation">
             {navLinks?.map((link) => (
               <Link
                 key={link?.href}
                 href={link?.href}
-                className="relative text-xs font-black uppercase tracking-[0.25em] text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1.5"
+                className="relative text-xs font-black uppercase tracking-[0.14em] text-muted-foreground hover:text-primary transition-colors duration-200 whitespace-nowrap"
               >
                 {link?.label}
-                {link?.isNew && (
-                  <span className="bg-primary text-primary-foreground text-[9px] px-1.5 py-0.5 rounded-full font-black tracking-normal uppercase">
-                    RAG
-                  </span>
-                )}
               </Link>
             ))}
             <Link
               href="/#community"
-              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-accent transition-all duration-200"
+              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-accent transition-all duration-200 flex-shrink-0 whitespace-nowrap"
             >
               Join Community
             </Link>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile/Tablet hamburger */}
           <button
-            className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border border-border text-foreground"
+            className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full border border-border text-foreground"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >

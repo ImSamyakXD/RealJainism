@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
-import { supabase } from '@/lib/supabase';
+import { mediaSupabase } from '@/lib/supabase';
 
 interface Wallpaper {
   id: string;
@@ -115,23 +115,44 @@ export default function WallpapersClient() {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Fetch wallpapers from Supabase dynamically
+  // Fetch wallpapers dynamically from admin API & Supabase
   useEffect(() => {
-    async function fetchWallpapersFromSupabase() {
+    async function fetchWallpapers() {
       try {
-        const { data, error } = await supabase
+        const res = await fetch('/api/admin/wallpapers');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            const mapped: Wallpaper[] = data.map((item: any) => ({
+              id: item.id,
+              title: item.title,
+              url: (item.url || item.image_url || '').trim(),
+              width: item.width || 1080,
+              height: item.height || 1920,
+              format: item.format || 'HD JPG',
+              downloads: item.downloads || 0,
+            }));
+            setWallpapers(mapped);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Admin API fetch notice:', err);
+      }
+
+      // Supabase direct fetch
+      try {
+        const { data, error } = await mediaSupabase
           .from('wallpapers')
           .select('*')
           .order('created_at', { ascending: false });
 
-        if (error) {
-          console.warn('Supabase fetch notice (using fallback):', error.message);
-          setWallpapers(fallbackWallpapers);
-        } else if (data && data.length > 0) {
+        if (!error && data && data.length > 0) {
           const mapped: Wallpaper[] = data.map((item: any) => ({
             id: item.id,
             title: item.title,
-            url: item.image_url || item.url,
+            url: (item.image_url || item.url || '').trim(),
             width: item.width || 1080,
             height: item.height || 1920,
             format: item.format || 'HD JPG',
@@ -142,14 +163,13 @@ export default function WallpapersClient() {
           setWallpapers(fallbackWallpapers);
         }
       } catch (e) {
-        console.warn('Supabase connection error:', e);
         setWallpapers(fallbackWallpapers);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchWallpapersFromSupabase();
+    fetchWallpapers();
   }, []);
 
   // Direct Blob Download Handler to bypass cross-origin browser opening

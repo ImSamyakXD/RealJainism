@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const RAG_BACKEND_URL = process.env.RAG_BACKEND_URL || 'http://127.0.0.1:8000';
+const RAG_BACKEND_URL = (process.env.RAG_BACKEND_URL || 'http://127.0.0.1:8000').replace(/\/+$/, '');
 
 export async function POST() {
   try {

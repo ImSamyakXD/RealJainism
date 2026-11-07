@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import defaultEvents from '@/data/special-events.json';
 
 interface PanchangData {
   month: string;
@@ -17,6 +18,23 @@ interface KalyanakData {
 interface SunData {
   sunrise: string;
   sunset: string;
+}
+
+export interface SpecialEvent {
+  id: string;
+  slug: string;
+  title: string;
+  hindi_title?: string;
+  tithi_date?: string;
+  upcoming_date?: string;
+  category?: string;
+  badge?: string;
+  description: string;
+  rituals?: string;
+  significance?: string;
+  image_url?: string;
+  is_active?: boolean;
+  display_order?: number;
 }
 
 const panchangJson: Record<string, PanchangData> = {
@@ -279,6 +297,11 @@ export default function PanchangClient() {
   const [sunLoading, setSunLoading] = useState(true);
   const [sunError, setSunError] = useState(false);
 
+  // Parv Filter: 'today' | 'upcoming' | 'all'
+  const [activeTab, setActiveTab] = useState<'today' | 'upcoming' | 'all'>('upcoming');
+  const [specialEvents, setSpecialEvents] = useState<SpecialEvent[]>([]);
+  const [eventsLoading, setEventsLoading] = useState(true);
+
   useEffect(() => {
     const now = new Date();
     setToday(formatDateKey(now));
@@ -296,18 +319,133 @@ export default function PanchangClient() {
       })
       .catch(() => setSunError(true))
       .finally(() => setSunLoading(false));
+
+    // Fetch events
+    fetch('/api/events')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setSpecialEvents(data);
+        } else {
+          setSpecialEvents(defaultEvents as SpecialEvent[]);
+        }
+      })
+      .catch(() => {
+        setSpecialEvents(defaultEvents as SpecialEvent[]);
+      })
+      .finally(() => setEventsLoading(false));
   }, []);
 
   const panchang = today ? panchangJson[today] : null;
   const kalyanak = today ? kalyanakJson[today] : null;
   const hasKalyanak = kalyanak?.tirthankar && kalyanak?.kalyanak_type;
 
+  // Day difference calculation
+  const getDaysDiff = (dateStr?: string) => {
+    if (!dateStr || !today) return null;
+    const tParts = today.split('-').map(Number);
+    const eParts = dateStr.split('-').map(Number);
+    if (tParts.length < 3 || eParts.length < 3) return null;
+    const todayDate = new Date(tParts[0], tParts[1] - 1, tParts[2]);
+    const eventDate = new Date(eParts[0], eParts[1] - 1, eParts[2]);
+    return Math.round((eventDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60 * 24));
+  };
+
+  // 3 Aesthetic Colors for Badges based on relative timing:
+  // Color 1 (Today): Emerald Green
+  // Color 2 (Tomorrow & In 2 to 5 days): Golden Amber
+  // Color 3 (Further dates like 9 November / 21 October): Royal Purple
+  const getParvDateBadge = (dateStr?: string) => {
+    if (!dateStr) {
+      return {
+        label: 'TBD',
+        pillClass: 'bg-[#19092c] border border-purple-500/80 text-purple-300 shadow-[0_0_12px_rgba(168,85,247,0.3)]',
+        dotClass: 'bg-purple-400',
+      };
+    }
+
+    const diff = getDaysDiff(dateStr);
+
+    const formatPrettyDate = (dStr: string) => {
+      const parts = dStr.split('-').map(Number);
+      if (parts.length === 3) {
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        return d.toLocaleDateString('en-US', { day: 'numeric', month: 'long' });
+      }
+      return dStr;
+    };
+
+    // Color 1: TODAY (Emerald Green)
+    if (diff === 0 || dateStr === today) {
+      return {
+        label: 'Today',
+        pillClass: 'bg-[#062014] border border-emerald-500/80 text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.35)]',
+        dotClass: 'bg-emerald-400 animate-pulse',
+      };
+    }
+
+    // Color 2: TOMORROW (Warm Golden Amber)
+    if (diff === 1) {
+      return {
+        label: 'Tomorrow',
+        pillClass: 'bg-[#221404] border border-amber-500/80 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.35)]',
+        dotClass: 'bg-amber-400',
+      };
+    }
+
+    // Color 2: IN 2 TO 5 DAYS (Warm Golden Amber)
+    if (diff !== null && diff >= 2 && diff <= 5) {
+      return {
+        label: `In ${diff} days`,
+        pillClass: 'bg-[#221404] border border-amber-500/80 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.35)]',
+        dotClass: 'bg-amber-400',
+      };
+    }
+
+    // Color 3: ALL OTHER DATES / BEYOND 5 DAYS (Royal Purple) - e.g. "9 November" or "21 October"
+    return {
+      label: formatPrettyDate(dateStr),
+      pillClass: 'bg-[#19092c] border border-purple-500/80 text-purple-300 shadow-[0_0_12px_rgba(168,85,247,0.35)]',
+      dotClass: 'bg-purple-400',
+    };
+  };
+
+  // Filter & Chronologically sort into Today, Upcoming, All
+  const getFilteredEvents = () => {
+    const list = [...specialEvents];
+    // Sort chronologically by upcoming_date
+    list.sort((a, b) => {
+      if (!a.upcoming_date) return 1;
+      if (!b.upcoming_date) return -1;
+      return a.upcoming_date.localeCompare(b.upcoming_date);
+    });
+
+    if (activeTab === 'today') {
+      return list.filter((ev) => {
+        const diff = getDaysDiff(ev.upcoming_date);
+        return diff === 0 || ev.upcoming_date === today;
+      });
+    }
+
+    if (activeTab === 'upcoming') {
+      return list.filter((ev) => {
+        const diff = getDaysDiff(ev.upcoming_date);
+        return diff !== null && diff > 0;
+      });
+    }
+
+    // 'all'
+    return list;
+  };
+
+  const filteredEvents = getFilteredEvents();
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 sm:py-16">
       {/* Page header */}
       <div className="mb-10 text-center">
         <p className="text-motto text-primary mb-3 opacity-70 tracking-[0.3em]"> जय जिनेन्द्र</p>
-        <h1 className="text-section-xl text-foreground uppercase">
+        <h1 className="text-section-xl text-foreground uppercase tracking-tight">
           Aaj Ka <span className="gold-gradient-text">Panchang</span>
         </h1>
         {displayDate && (
@@ -347,9 +485,10 @@ export default function PanchangClient() {
 
       {/* Panchang card */}
       {panchang ? (
-        <div className="bg-card border border-border rounded-2xl overflow-hidden mb-6">
-          <div className="bg-primary/10 border-b border-border px-6 py-4">
+        <div className="bg-card border border-border rounded-2xl overflow-hidden mb-6 shadow-sm">
+          <div className="bg-primary/10 border-b border-border px-6 py-4 flex items-center justify-between">
             <p className="text-[10px] font-black uppercase tracking-widest text-primary">Jain Panchang</p>
+            <span className="text-[10px] font-semibold text-muted-foreground">दिगंबर जैन पंचांग</span>
           </div>
           <div className="divide-y divide-border">
             <PanchangRow label="Hindi Maah (Month)" value={panchang.month} />
@@ -367,7 +506,7 @@ export default function PanchangClient() {
 
       {/* Kalyanak — only show if present */}
       {hasKalyanak && (
-        <div className="kalyanak-badge rounded-2xl p-6">
+        <div className="kalyanak-badge rounded-2xl p-6 mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
               <Icon name="StarIcon" size={20} className="text-primary" variant="solid" />
@@ -380,7 +519,6 @@ export default function PanchangClient() {
             </div>
           </div>
 
-          {/* Handle multiple kalyanaks (comma-separated) */}
           {kalyanak!.tirthankar!.split(',').map((tirth, idx) => {
             const types = kalyanak!.kalyanak_type!.split(',');
             const type = types[idx]?.trim() || '';
@@ -394,8 +532,126 @@ export default function PanchangClient() {
         </div>
       )}
 
+      {/* ========================================================================= */}
+      {/* MINIMALISTIC JAIN PARV SECTION (TODAY, UPCOMING, ALL) */}
+      {/* ========================================================================= */}
+      <section className="mt-10 pt-6 border-t border-border">
+        {/* Simple 3-Tab Filter: Today | Upcoming | All */}
+        <div className="flex items-center justify-between gap-3 mb-6">
+          <div>
+            <h2 className="text-lg font-black text-foreground uppercase tracking-wider">
+              Jain <span className="text-primary">Parv</span>
+            </h2>
+            <p className="text-[11px] text-muted-foreground font-medium mt-0.5">
+              Synced with daily Jain Panchang tithi & calendar
+            </p>
+          </div>
+
+          <div className="flex items-center bg-card border border-border rounded-xl p-1 gap-1">
+            <button
+              onClick={() => setActiveTab('today')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-1.5 ${
+                activeTab === 'today'
+                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-xs'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>Today</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('upcoming')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-1.5 ${
+                activeTab === 'upcoming'
+                  ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40 shadow-xs'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span>Upcoming</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('all')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-1.5 ${
+                activeTab === 'all'
+                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-xs'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+              <span>All</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Minimalist Cards */}
+        {eventsLoading ? (
+          <div className="space-y-3">
+            {[1, 2].map((i) => (
+              <div key={i} className="h-24 rounded-2xl bg-card border border-border animate-pulse p-4" />
+            ))}
+          </div>
+        ) : filteredEvents.length === 0 ? (
+          <div className="text-center py-8 bg-card rounded-2xl border border-border p-6">
+            <p className="text-xs text-muted-foreground font-medium">
+              {activeTab === 'today'
+                ? 'No special parv scheduled for today.'
+                : activeTab === 'upcoming'
+                ? 'No upcoming parv in this list.'
+                : 'No parv found.'}
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-3.5">
+            {filteredEvents.map((ev) => {
+              const badge = getParvDateBadge(ev.upcoming_date);
+
+              return (
+                <div
+                  key={ev.id}
+                  className="bg-card border border-border rounded-2xl p-4 sm:p-5 transition-all hover:border-primary/40 shadow-xs"
+                >
+                  {/* Top Row: Parv Title + Tithi on left, Right-side Date Badge in 3 Aesthetic Colors */}
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      {/* Parv Name */}
+                      <h3 className="text-base font-black text-foreground leading-snug">
+                        {ev.title}
+                      </h3>
+
+                      {/* Tithi shown directly below the Parv Name */}
+                      {ev.tithi_date && (
+                        <p className="text-xs font-semibold text-primary/85 mt-1 flex items-center gap-1.5">
+                          <Icon name="CalendarIcon" size={13} className="text-primary/70 flex-shrink-0" />
+                          <span>{ev.tithi_date}</span>
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Right Side: Date Badge in 3 Aesthetic Colors */}
+                    <div className="flex-shrink-0 pt-0.5">
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide whitespace-nowrap ${badge.pillClass}`}
+                      >
+                        <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${badge.dotClass}`} />
+                        <span>{badge.label}</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* 2-3 Line Clean Description — No image, no extra clutter */}
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3 mt-2.5">
+                    {ev.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
+
       {/* Quote */}
-      <div className="mt-8 border-t border-border pt-8 text-center">
+      <div className="mt-10 border-t border-border pt-8 text-center">
         <p className="text-sm font-bold text-primary leading-relaxed">
           सम्यग्दर्शनज्ञानचारित्राणिमोक्षमार्ग:
         </p>
