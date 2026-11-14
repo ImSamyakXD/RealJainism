@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'jain2026';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 export async function POST(req: Request) {
   try {
     const { password } = await req.json();
 
-    if (!password || password.trim() !== ADMIN_PASSWORD) {
+    if (!ADMIN_PASSWORD || !password || password.trim() !== ADMIN_PASSWORD) {
       return NextResponse.json(
         { success: false, message: 'Invalid admin password. Please try again.' },
         { status: 401 }
