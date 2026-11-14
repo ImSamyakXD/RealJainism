@@ -126,8 +126,9 @@ export async function POST(req: Request) {
       }
     }
 
-    // 2. In Serverless hosting (Vercel / AWS Lambda), the filesystem is read-only
+    // 2. In Serverless hosting (Netlify / Vercel / AWS Lambda), the filesystem is read-only
     const isServerless =
+      process.env.NETLIFY ||
       process.env.VERCEL ||
       process.env.AWS_LAMBDA_FUNCTION_NAME ||
       process.env.NODE_ENV === 'production';
@@ -136,7 +137,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: `Storage upload failed: ${lastUploadError}. Please check MEDIA_SUPABASE_SECRET_KEY in Vercel settings or allow bucket uploads in Supabase.`,
+          message: `Storage upload failed: ${lastUploadError}. Please check MEDIA_SUPABASE_SECRET_KEY in Netlify settings or allow bucket uploads in Supabase.`,
         },
         { status: 500 }
       );
@@ -168,7 +169,7 @@ export async function POST(req: Request) {
         {
           success: false,
           message: lastUploadError
-            ? `Supabase upload failed (${lastUploadError}) and serverless filesystem is read-only. Please add MEDIA_SUPABASE_SECRET_KEY to your Vercel Environment Variables.`
+            ? `Supabase upload failed (${lastUploadError}) and serverless filesystem is read-only. Please add MEDIA_SUPABASE_SECRET_KEY to your Netlify Environment Variables.`
             : `File storage error: ${fsErr.message}`,
         },
         { status: 500 }
