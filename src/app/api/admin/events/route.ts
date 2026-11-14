@@ -17,7 +17,11 @@ async function readEvents() {
 }
 
 async function writeEvents(data: any[]) {
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch {
+    // On serverless hosting (Netlify/AWS Lambda), filesystem is read-only
+  }
 }
 
 export async function GET() {

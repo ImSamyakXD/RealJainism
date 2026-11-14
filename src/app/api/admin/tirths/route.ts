@@ -18,7 +18,11 @@ async function readCustomTirths(): Promise<Record<string, any>> {
 }
 
 async function writeCustomTirths(data: Record<string, any>) {
-  await fs.writeFile(customFilePath, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    await fs.writeFile(customFilePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch {
+    // On serverless hosting (Netlify/AWS Lambda), filesystem is read-only
+  }
 }
 
 export async function GET(req: Request) {
@@ -139,15 +143,20 @@ export async function POST(req: Request) {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)/g, '');
 
+    const tirthId =
+      body.id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(body.id)
+        ? body.id
+        : crypto.randomUUID();
+
     const newTirth = {
-      id: body.id || `tirth-${Date.now()}`,
+      id: tirthId,
       slug,
       name: body.name.trim(),
       hindi_name: body.hindi_name?.trim() || '',
       tirth_type: body.tirth_type || 'atishay_kshetra',
       tradition: body.tradition || 'Digambara',
       state: body.state.trim(),
-      district: body.district?.trim() || body.city.trim(),
+      district: body.district?.trim() || body.city?.trim() || body.state?.trim() || 'General',
       city: body.city.trim(),
       address: body.address?.trim() || '',
       pin_code: body.pin_code?.trim() || '',
@@ -156,6 +165,7 @@ export async function POST(req: Request) {
       google_maps_url: body.google_maps_url || '',
       description: body.description?.trim() || 'Sacred Digambar Jain Tirth Kshetra.',
       history: body.history?.trim() || '',
+      religious_significance: body.religious_significance?.trim() || '',
       moolnayak_details: body.moolnayak_details?.trim() || '',
       darshan_timings: body.darshan_timings || {
         morning: '6:00 AM - 11:30 AM',
@@ -165,9 +175,10 @@ export async function POST(req: Request) {
         ? body.facilities
         : ['Dharamshala', 'Bhojanshala', 'Drinking Water', 'Parking'],
       contact_phone: body.contact_phone?.trim() || '',
+      contact_email: body.contact_email?.trim() || null,
       official_website: body.official_website?.trim() || '',
       cover_image_url: body.cover_image_url?.trim() || '',
-      verification_status: 'published',
+      verification_status: body.verification_status || 'published',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -233,19 +244,29 @@ export async function PUT(req: Request) {
       const updateData: any = {
         name: updatedTirth.name,
         hindi_name: updatedTirth.hindi_name,
-        description: updatedTirth.description,
-        cover_image_url: updatedTirth.cover_image_url,
-        moolnayak_details: updatedTirth.moolnayak_details,
-        contact_phone: updatedTirth.contact_phone,
-        official_website: updatedTirth.official_website,
-        darshan_timings: updatedTirth.darshan_timings,
-        facilities: updatedTirth.facilities,
+        tirth_type: updatedTirth.tirth_type,
+        tradition: updatedTirth.tradition,
         state: updatedTirth.state,
+        district: updatedTirth.district || updatedTirth.city,
         city: updatedTirth.city,
         address: updatedTirth.address,
+        pin_code: updatedTirth.pin_code,
+        google_maps_url: updatedTirth.google_maps_url,
+        description: updatedTirth.description,
+        history: updatedTirth.history,
+        religious_significance: updatedTirth.religious_significance,
+        moolnayak_details: updatedTirth.moolnayak_details,
+        contact_phone: updatedTirth.contact_phone,
+        contact_email: updatedTirth.contact_email,
+        official_website: updatedTirth.official_website,
+        cover_image_url: updatedTirth.cover_image_url,
+        darshan_timings: updatedTirth.darshan_timings,
+        facilities: updatedTirth.facilities,
+        verification_status: updatedTirth.verification_status || 'published',
+        updated_at: new Date().toISOString(),
       };
-      if (updatedTirth.latitude !== undefined) updateData.latitude = updatedTirth.latitude;
-      if (updatedTirth.longitude !== undefined) updateData.longitude = updatedTirth.longitude;
+      if (updatedTirth.latitude !== undefined) updateData.latitude = Number(updatedTirth.latitude);
+      if (updatedTirth.longitude !== undefined) updateData.longitude = Number(updatedTirth.longitude);
 
       const { data: updatedRows, error: updErr } = await supabaseAdmin
         .from('tirths')
@@ -281,7 +302,7 @@ export async function DELETE(req: Request) {
     await writeCustomTirths(customOverrides);
 
     try {
-      await supabase.from('tirths').delete().eq('slug', slug);
+      await supabaseAdmin.from('tirths').delete().eq('slug', slug);
     } catch {
       // ignore
     }

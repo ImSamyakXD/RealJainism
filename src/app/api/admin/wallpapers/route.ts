@@ -17,7 +17,11 @@ async function readLocalWallpapers() {
 }
 
 async function writeLocalWallpapers(data: any[]) {
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch {
+    // On serverless hosting (Netlify/AWS Lambda), filesystem is read-only
+  }
 }
 
 export async function GET() {
@@ -80,7 +84,7 @@ export async function POST(req: Request) {
       const { data: existing } = await mediaSupabaseAdmin
         .from('wallpapers')
         .select('*')
-        .or(`image_url.eq.${url},url.eq.${url}`)
+        .eq('image_url', url)
         .limit(1)
         .maybeSingle();
 
@@ -209,15 +213,18 @@ export async function PUT(req: Request) {
     }
 
     try {
-      await mediaSupabaseAdmin
+      const { error: updErr } = await mediaSupabaseAdmin
         .from('wallpapers')
         .update({
           title: body.title,
           image_url: body.url || body.image_url,
         })
         .eq('id', body.id);
+      if (updErr) {
+        console.error('Supabase wallpaper update error:', updErr);
+      }
     } catch (err) {
-      // ignore
+      console.error('Supabase wallpaper update exception:', err);
     }
 
     const current = await readLocalWallpapers();
@@ -243,9 +250,12 @@ export async function DELETE(req: Request) {
 
     // Delete in Media Supabase
     try {
-      await mediaSupabaseAdmin.from('wallpapers').delete().eq('id', id);
-    } catch {
-      // ignore
+      const { error: delErr } = await mediaSupabaseAdmin.from('wallpapers').delete().eq('id', id);
+      if (delErr) {
+        console.error('Supabase wallpaper delete error:', delErr);
+      }
+    } catch (err) {
+      console.error('Supabase wallpaper delete exception:', err);
     }
 
     const current = await readLocalWallpapers();

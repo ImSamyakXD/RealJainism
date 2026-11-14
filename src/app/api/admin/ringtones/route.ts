@@ -17,7 +17,11 @@ async function readLocalRingtones() {
 }
 
 async function writeLocalRingtones(data: any[]) {
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch {
+    // On serverless hosting (Netlify/AWS Lambda), filesystem is read-only
+  }
 }
 
 export async function GET() {
@@ -171,7 +175,7 @@ export async function PUT(req: Request) {
     }
 
     try {
-      await mediaSupabaseAdmin
+      const { error: updErr } = await mediaSupabaseAdmin
         .from('ringtones')
         .update({
           name: body.name,
@@ -180,8 +184,11 @@ export async function PUT(req: Request) {
           audio_url: body.audioUrl || body.audio_url,
         })
         .eq('id', body.id);
-    } catch {
-      // ignore
+      if (updErr) {
+        console.error('Supabase ringtone update error:', updErr);
+      }
+    } catch (err) {
+      console.error('Supabase ringtone update exception:', err);
     }
 
     const current = await readLocalRingtones();
@@ -206,9 +213,12 @@ export async function DELETE(req: Request) {
     }
 
     try {
-      await mediaSupabaseAdmin.from('ringtones').delete().eq('id', id);
-    } catch {
-      // ignore
+      const { error: delErr } = await mediaSupabaseAdmin.from('ringtones').delete().eq('id', id);
+      if (delErr) {
+        console.error('Supabase ringtone delete error:', delErr);
+      }
+    } catch (err) {
+      console.error('Supabase ringtone delete exception:', err);
     }
 
     const current = await readLocalRingtones();

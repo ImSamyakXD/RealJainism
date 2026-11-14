@@ -1,5 +1,38 @@
 [
   {
+    "id": "de34b5e1-0912-4708-957e-d391a7be4b10",
+    "title": "1000146135",
+    "url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/Wallpapers/1000146135_1794626950452.jpg",
+    "width": 1080,
+    "height": 1920,
+    "format": "HD JPG",
+    "category": "Temples",
+    "downloads": 0,
+    "created_at": "2026-11-14T03:29:12.670008+00:00"
+  },
+  {
+    "id": "c2e3228e-788d-4e27-a7c9-a54a676b9b46",
+    "title": "1000161253",
+    "url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/Wallpapers/1000161253_1794625496335.png",
+    "width": 1080,
+    "height": 1920,
+    "format": "HD JPG",
+    "category": "Temples",
+    "downloads": 0,
+    "created_at": "2026-11-14T03:04:59.800044+00:00"
+  },
+  {
+    "id": "59961782-2620-4e4f-9104-9c95c62e694e",
+    "title": "Wallpaper 69",
+    "url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/Wallpapers/test_secret.txt",
+    "width": 1080,
+    "height": 1920,
+    "format": "HD JPG",
+    "category": "Temples",
+    "downloads": 0,
+    "created_at": "2026-11-14T02:41:54.614423+00:00"
+  },
+  {
     "id": "4c1a0ccb-fcf7-4751-808f-279caf6f892e",
     "title": "Wallpaper 68",
     "url": "https://vcojoqgwwfihjipkrxnp.supabase.co/storage/v1/object/public/Wallpapers/wallpaper_51_1792845805417.jpg",
