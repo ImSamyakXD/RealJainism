@@ -80,7 +80,7 @@ export default function RingtonesClient() {
   useEffect(() => {
     async function fetchRingtones() {
       try {
-        const res = await fetch('/api/admin/ringtones');
+        const res = await fetch('/api/admin/ringtones', { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data) && data.length > 0) {

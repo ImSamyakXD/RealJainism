@@ -69,7 +69,7 @@ export default function TirthsClient() {
   useEffect(() => {
     async function fetchTirths() {
       try {
-        const apiRes = await fetch('/api/admin/tirths?limit=1000');
+        const apiRes = await fetch('/api/admin/tirths?limit=1000', { cache: 'no-store' });
         if (apiRes.ok) {
           const apiData = await apiRes.json();
           if (apiData.tirths && apiData.tirths.length > 0) {

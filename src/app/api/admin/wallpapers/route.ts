@@ -86,15 +86,29 @@ export async function POST(req: Request) {
 
       if (existing) {
         // Update existing row (prevents duplicates when storage trigger already fired)
-        const { data: updated, error: updateErr } = await mediaSupabaseAdmin
+        const updatePayload: any = {
+          title: title || existing.title,
+        };
+        if (body.category) updatePayload.category = body.category;
+
+        let { data: updated, error: updateErr } = await mediaSupabaseAdmin
           .from('wallpapers')
-          .update({
-            title: title || existing.title,
-            category: body.category || existing.category || 'Temples',
-          })
+          .update(updatePayload)
           .eq('id', existing.id)
           .select()
           .single();
+
+        if (updateErr && (updateErr.message?.includes('category') || updateErr.code === 'PGRST204')) {
+          delete updatePayload.category;
+          const retry = await mediaSupabaseAdmin
+            .from('wallpapers')
+            .update(updatePayload)
+            .eq('id', existing.id)
+            .select()
+            .single();
+          updated = retry.data;
+          updateErr = retry.error;
+        }
 
         if (!updateErr && updated) {
           newItem = {
@@ -111,21 +125,33 @@ export async function POST(req: Request) {
         }
       } else {
         // Insert new row
-        const { data, error } = await mediaSupabaseAdmin
+        const insertPayload: any = {
+          title,
+          image_url: url,
+          width,
+          height,
+          format,
+          downloads: 0,
+        };
+        if (body.category) insertPayload.category = body.category;
+
+        let { data, error } = await mediaSupabaseAdmin
           .from('wallpapers')
-          .insert([
-            {
-              title,
-              image_url: url,
-              category: body.category || 'Temples',
-              width,
-              height,
-              format,
-              downloads: 0,
-            },
-          ])
+          .insert([insertPayload])
           .select()
           .single();
+
+        // If category column does not exist in Supabase, retry without it
+        if (error && (error.message?.includes('category') || error.code === 'PGRST204')) {
+          delete insertPayload.category;
+          const retry = await mediaSupabaseAdmin
+            .from('wallpapers')
+            .insert([insertPayload])
+            .select()
+            .single();
+          data = retry.data;
+          error = retry.error;
+        }
 
         if (!error && data) {
           newItem = {

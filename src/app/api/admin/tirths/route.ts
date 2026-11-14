@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs/promises';
-import { supabase } from '@/lib/supabase';
+import { supabase, supabaseAdmin } from '@/lib/supabase';
 import baseTirths from '@/data/tirths-data.json';
 
 export const dynamic = 'force-dynamic';
@@ -178,9 +178,12 @@ export async function POST(req: Request) {
 
     // Try Supabase insert
     try {
-      await supabase.from('tirths').insert([newTirth]);
-    } catch {
-      // ignore
+      const { error: insErr } = await supabaseAdmin.from('tirths').insert([newTirth]);
+      if (insErr) {
+        console.error('Supabase tirth insert notice:', insErr);
+      }
+    } catch (err) {
+      console.error('Supabase insert exception:', err);
     }
 
     return NextResponse.json({ success: true, item: newTirth });
@@ -227,25 +230,36 @@ export async function PUT(req: Request) {
 
     // Try Supabase update
     try {
-      await supabase
+      const updateData: any = {
+        name: updatedTirth.name,
+        hindi_name: updatedTirth.hindi_name,
+        description: updatedTirth.description,
+        cover_image_url: updatedTirth.cover_image_url,
+        moolnayak_details: updatedTirth.moolnayak_details,
+        contact_phone: updatedTirth.contact_phone,
+        official_website: updatedTirth.official_website,
+        darshan_timings: updatedTirth.darshan_timings,
+        facilities: updatedTirth.facilities,
+        state: updatedTirth.state,
+        city: updatedTirth.city,
+        address: updatedTirth.address,
+      };
+      if (updatedTirth.latitude !== undefined) updateData.latitude = updatedTirth.latitude;
+      if (updatedTirth.longitude !== undefined) updateData.longitude = updatedTirth.longitude;
+
+      const { data: updatedRows, error: updErr } = await supabaseAdmin
         .from('tirths')
-        .update({
-          name: updatedTirth.name,
-          hindi_name: updatedTirth.hindi_name,
-          description: updatedTirth.description,
-          cover_image_url: updatedTirth.cover_image_url,
-          moolnayak_details: updatedTirth.moolnayak_details,
-          contact_phone: updatedTirth.contact_phone,
-          official_website: updatedTirth.official_website,
-          darshan_timings: updatedTirth.darshan_timings,
-          facilities: updatedTirth.facilities,
-          state: updatedTirth.state,
-          city: updatedTirth.city,
-          address: updatedTirth.address,
-        })
-        .eq('slug', slug);
-    } catch {
-      // ignore
+        .update(updateData)
+        .eq('slug', slug)
+        .select();
+
+      if (updErr) {
+        console.error('Supabase tirth update error:', updErr);
+      } else if (!updatedRows || updatedRows.length === 0) {
+        console.warn('Supabase tirth update matched 0 rows (check RLS permissions or slug):', slug);
+      }
+    } catch (err) {
+      console.error('Supabase update exception:', err);
     }
 
     return NextResponse.json({ success: true, item: updatedTirth });

@@ -119,7 +119,7 @@ export default function WallpapersClient() {
   useEffect(() => {
     async function fetchWallpapers() {
       try {
-        const res = await fetch('/api/admin/wallpapers');
+        const res = await fetch('/api/admin/wallpapers', { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data) && data.length > 0) {
